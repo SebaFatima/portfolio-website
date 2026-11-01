@@ -1,448 +1,281 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Professional portfolio in business systems, Excel automation, process improvement and operational reporting.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Fatima Seba develops practical Excel-based business systems, process automation and financial and operational reporting solutions.">
   <title>Fatima Seba | Business Systems & Process Automation</title>
   <style>
-    :root {
-      --navy: #14243a;
-      --teal: #117c78;
-      --text: #27384b;
-      --muted: #596b7d;
-      --background: #f6f8fa;
-      --line: #dce5ea;
-      --white: #ffffff;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
-    body {
-      margin: 0;
-      color: var(--text);
-      background: var(--background);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
-    a { color: inherit; }
-    a:focus-visible, summary:focus-visible {
-      outline: 3px solid var(--teal);
-      outline-offset: 4px;
-    }
-    .container {
-      width: min(1100px, 90%);
-      margin-inline: auto;
-    }
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-    }
-    .navigation {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding-block: 18px;
-    }
-    .brand {
-      font-size: 1.15rem;
-      font-weight: 800;
-      text-decoration: none;
-      color: var(--navy);
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-    }
-    nav a {
-      text-decoration: none;
-      font-size: .92rem;
-      font-weight: 600;
-    }
-    nav a:hover { color: var(--teal); }
-    .hero {
-      padding: 105px 0 100px;
-      background: var(--navy);
-      color: var(--white);
-    }
-    .eyebrow {
-      color: #83d8cf;
-      text-transform: uppercase;
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    h1 {
-      font-size: clamp(2.3rem, 5vw, 4.1rem);
-      line-height: 1.15;
-      max-width: 850px;
-      margin: 20px 0 25px;
-      letter-spacing: -1.5px;
-    }
-    .hero p {
-      max-width: 740px;
-      color: #d3dfe8;
-      font-size: 1.12rem;
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-    .button {
-      display: inline-block;
-      padding: 12px 23px;
-      border-radius: 5px;
-      background: var(--teal);
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .button-outline {
-      border: 1px solid #b9cedb;
-      background: transparent;
-    }
-    .button:hover { filter: brightness(1.12); }
-    section { padding: 85px 0; }
-    section:nth-of-type(odd):not(.hero) { background: white; }
-    .section-label {
-      color: var(--teal);
-      font-weight: 700;
-      font-size: .82rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-    h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      line-height: 1.25;
-      color: var(--navy);
-      margin: 12px 0 22px;
-    }
-    h3 { color: var(--navy); line-height: 1.35; }
-    .intro { max-width: 770px; color: var(--muted); }
-    .capabilities {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 35px;
-    }
-    .capability, .project {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 26px;
-    }
-    .capability h3 { margin-top: 0; }
-    .capability p { margin-bottom: 0; color: var(--muted); }
-    .projects { display: grid; gap: 25px; margin-top: 35px; }
-    .project {
-      padding: 34px;
-      border-left: 4px solid var(--teal);
-    }
-    .project-number {
-      color: var(--teal);
-      font-size: .82rem;
-      font-weight: 800;
-    }
-    .project h3 { font-size: 1.45rem; margin: 8px 0; }
-    .project p { max-width: 850px; }
-    .project ul { padding-left: 22px; }
-    .project li { margin-bottom: 7px; }
-    details {
-      border-top: 1px solid var(--line);
-      padding-top: 16px;
-      margin-top: 20px;
-    }
-    summary {
-      cursor: pointer;
-      color: var(--teal);
-      font-weight: 700;
-    }
-    .expertise-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 25px;
-    }
-    .expertise-list span {
-      padding: 8px 14px;
-      background: #e9f1f3;
-      border-radius: 4px;
-      font-size: .9rem;
-    }
-    .about-text { max-width: 850px; }
-    .contact {
-      background: var(--navy);
-      color: white;
-    }
-    .contact h2 { color: white; }
-    .contact p { max-width: 720px; color: #d3dfe8; }
-    .contact-note { font-size: .9rem; }
-    footer {
-      padding: 28px 0;
-      background: #0d1a2a;
-      color: #c8d6e2;
-      text-align: center;
-      font-size: .85rem;
-    }
-    @media (max-width: 760px) {
-      .navigation { align-items: flex-start; flex-direction: column; }
-      nav { gap: 12px 18px; }
-      .hero { padding: 75px 0; }
-      section { padding: 60px 0; }
-      .capabilities { grid-template-columns: 1fr; }
-      .project { padding: 22px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
+    /* ===== DESIGN SETTINGS: COLOURS, FONTS AND SPACING ===== */
+    :root { --navy:#14243a; --teal:#117c78; --text:#27384b; --muted:#596b7d; --bg:#f6f8fa; --line:#dce5ea; --white:#fff; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:105px} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    [hidden]{display:none!important} a{color:inherit} a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+    .container{width:min(1100px,90%);margin:auto}.site-header{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+    .navigation{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0}.brand{font-weight:800;font-size:1.13rem;text-decoration:none;color:var(--navy)}
+    nav{display:flex;gap:23px;flex-wrap:wrap}nav a{text-decoration:none;font-weight:600;font-size:.91rem}nav a:hover{color:var(--teal)}
+    .hero{padding:95px 0 92px;background:var(--navy);color:#fff}.eyebrow,.section-label{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1.6px}.eyebrow{color:#83d8cf}
+    h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.15;letter-spacing:-1.3px;max-width:890px;margin:20px 0 24px}h2{font-size:clamp(1.8rem,3vw,2.45rem);line-height:1.23;color:var(--navy);margin:12px 0 20px}h3{color:var(--navy);line-height:1.35}
+    .hero p{max-width:740px;color:#d3dfe8;font-size:1.1rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;padding:12px 22px;border-radius:6px;background:var(--teal);color:#fff;font-weight:700;border:1px solid transparent;font:inherit;cursor:pointer}.btn:hover{filter:brightness(1.08)}.btn-outline{background:transparent;border-color:#b9cedb}.btn-light{background:#fff;color:var(--navy);border-color:var(--line)}.btn-dark{background:var(--navy);color:#fff}.btn-disabled{background:#eef1f3;color:#616e78;border:1px solid #d6dfe3;cursor:not-allowed}
+    section{padding:78px 0}section.alt{background:#fff}.section-label{color:var(--teal)}.intro{max-width:820px;color:var(--muted)}
+    .capabilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px}.capability{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px}.capability h3{margin:0 0 10px}.capability p{margin:0;color:var(--muted)}
+    /* ===== PROJECT CARDS: ORIGINAL BORDER STYLE + EXPANDABLE DETAILS ===== */
+    .project-list{display:grid;gap:18px;margin-top:30px}.project{background:white;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:8px;overflow:hidden}
+    .project > summary{list-style:none;cursor:pointer;padding:22px 25px}.project > summary::-webkit-details-marker{display:none}.project > summary:hover{background:#fafdfe}
+    .project-head{display:grid;grid-template-columns:minmax(0,1fr) 220px 20px;gap:22px;align-items:center}.project-num{color:var(--teal);font-size:.77rem;font-weight:800;letter-spacing:.5px}.project-title{display:block;font-size:1.42rem;font-weight:750;color:var(--navy);line-height:1.3;margin:6px 0}.project-subtitle{display:block;font-size:.95rem;color:var(--muted);line-height:1.5}.chevron{font-size:1.5rem;font-weight:700;color:var(--teal);transition:transform .2s}.project[open] .chevron{transform:rotate(180deg)}
+    .project-body{padding:0 26px 30px;border-top:1px solid var(--line)}.project-teaser{color:var(--muted);margin:20px 0 18px}.case-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:start}.case-grid h4{color:var(--teal);font-size:1rem;margin:22px 0 6px}.case-grid p{margin:0 0 10px}.case-grid ul{margin:6px 0 16px;padding-left:20px}.case-grid li{margin-bottom:5px}.panel{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:17px;margin:22px 0 0}.panel h4{margin:0 0 8px}.panel p{margin:0}
+    .gallery-title{margin:28px 0 12px;color:var(--navy)}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.media-card{margin:0}.media-card figcaption{font-size:.85rem;color:var(--muted);line-height:1.45;margin-top:7px}
+    .media-slot{border:1px dashed #adc2cb;background:#f0f5f6;border-radius:6px;display:flex;align-items:center;justify-content:center;min-height:165px;overflow:hidden;position:relative}.media-slot.cover{height:102px;min-height:102px}.media-slot.gallery-slot{aspect-ratio:16/10}.media-placeholder{text-align:center;color:#607784;font-size:.78rem;padding:15px;line-height:1.4}.media-placeholder strong{display:block;color:var(--navy)}.media-slot.loaded{border-style:solid;background:#fff}.media-slot a{width:100%;height:100%;display:block}.media-slot img{width:100%;height:100%;display:block;object-fit:contain}.media-slot.cover img{object-fit:cover}
+    .confidentiality{font-size:.81rem;color:#647484;margin:20px 0 0;line-height:1.5}.video-note{border:1px dashed var(--line);padding:12px 16px;border-radius:6px;color:var(--muted);font-size:.9rem;margin-top:12px}.video-player{width:100%;max-height:400px;background:#172235;border-radius:6px;margin-top:12px}
+    .expertise-list{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.expertise-list span{background:#e9f1f3;padding:7px 13px;border-radius:4px;font-size:.9rem}.about-text{max-width:860px}
+    .contact{background:#eef7f6}.contact p{max-width:780px}.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.contact-actions .btn{font-size:.96rem}.contact-small{color:var(--muted);font-size:.83rem}footer{background:#0d1a2a;color:#c8d6e2;text-align:center;padding:26px 0;font-size:.85rem}
+    @media(max-width:780px){.navigation{align-items:flex-start;flex-direction:column;gap:9px}nav{gap:10px 17px}.hero{padding:65px 0}section{padding:57px 0}.capabilities{grid-template-columns:1fr}.project-head{grid-template-columns:minmax(0,1fr) 22px}.project-head .cover{grid-column:1/-1;grid-row:2;height:90px}.project-head .chevron{grid-column:2;grid-row:1}.project > summary{padding:18px}.project-body{padding:0 18px 22px}.case-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.contact-actions{flex-direction:column;align-items:stretch}.contact-actions .btn{text-align:center}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chevron{transition:none}}
   </style>
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="container navigation">
-      <a class="brand" href="#home">Fatima Seba</a>
-      <nav aria-label="Main navigation">
-        <a href="#work">What I Do</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact & CV</a>
-      </nav>
+<!-- ================================================================
+ EDITING GUIDE — OPEN THIS FILE IN GITHUB AND SEARCH (CTRL+F):
+   EDIT HERO TEXT       -> HERO CONTENT
+   EDIT PROJECT 01      -> PROJECT 01 CONTENT
+   EDIT PROJECT 02      -> PROJECT 02 CONTENT
+   EDIT PROJECT 03      -> PROJECT 03 CONTENT
+   EDIT CONTACT DETAILS -> CONTACT CONTENT
+   IMAGE FILENAMES      -> data-image="assets/projects/..."
+ Do not change the HTML tags when editing descriptions: change the words between them.
+ For images: upload files to the EXACT paths below. Placeholders disappear automatically.
+ CV PDF: upload documents/Fatima_Seba_CV.pdf; button activates automatically.
+================================================================ -->
+<header class="site-header"><div class="container navigation">
+  <a href="#home" class="brand">Fatima Seba</a>
+  <nav aria-label="Main navigation"><a href="#work">What I Do</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact &amp; CV</a></nav>
+</div></header>
+<main>
+<!-- ===================== HERO CONTENT ===================== -->
+<section class="hero" id="home"><div class="container">
+  <div class="eyebrow">Business Systems · Process Automation · Reporting</div>
+  <h1>Turning complex business operations into practical, structured systems.</h1>
+  <p>I design and develop customised Excel-based systems that organise operational information, simplify administrative workflows, reduce repetitive manual work and improve access to financial and management reporting.</p>
+  <div class="actions"><a class="btn" href="#projects">Explore Projects</a><a class="btn btn-outline" href="#contact">Contact Me</a></div>
+</div></section>
+<!-- ===================== WHAT I DO CONTENT ===================== -->
+<section id="work"><div class="container">
+  <div class="section-label">What I Do</div><h2>Business-focused systems and automation</h2>
+  <p class="intro">I investigate existing processes and translate business requirements into practical systems that employees can use and managers can rely on for structured information.</p>
+  <div class="capabilities">
+    <article class="capability"><h3>Business Systems</h3><p>Custom Excel-based tools for organising sales, inventory, financial transactions, collections and operational information.</p></article>
+    <article class="capability"><h3>Excel Automation</h3><p>Structured calculations, linked reporting views and streamlined recurring administrative tasks.</p></article>
+    <article class="capability"><h3>Operational Reporting</h3><p>Consistent management information for financial control, project tracking and day-to-day operations.</p></article>
+  </div>
+</div></section>
+<!-- ===================== PROJECTS CONTENT ===================== -->
+<section id="projects" class="alt"><div class="container">
+  <div class="section-label">Selected Work</div><h2>Real business systems and projects</h2>
+  <p class="intro">Three examples of customised Excel-based solutions developed for operational, financial and project management needs. Select a project to explore the challenge, my contribution and the working system.</p>
+  <div class="project-list">
+  <!-- ===================== PROJECT 01 CONTENT: DAIRY ===================== -->
+  <details class="project" id="project-dairy">
+    <summary><span class="project-head">
+      <span><span class="project-num">PROJECT 01</span><span class="project-title">Cattle &amp; Dairy Business Digitalisation</span><span class="project-subtitle">Integrated operational and financial management system for a cattle and dairy business.</span></span>
+      <span class="media-slot cover" data-image="assets/projects/dairy/preview.webp" data-alt="Anonymised Excel accounting interface from the cattle and dairy system"><span class="media-placeholder"><strong>Excel system preview</strong>Upload dairy/preview.webp</span></span>
+      <span class="chevron" aria-hidden="true">⌄</span>
+    </span></summary>
+    <div class="project-body">
+      <p class="project-teaser"><strong>Project overview.</strong> From paper-based administration and disconnected records to a structured Excel system for financial control, account-level tracking and recurring reporting.</p>
+      <div class="case-grid">
+        <div>
+          <h4>The Business Challenge</h4>
+          <p>The business relied heavily on paper records and separate administrative processes to manage financial and operational information. Transactions, obligations, payments, accounts and livestock-and-dairy information needed a usable digital structure for employees with varying computer experience.</p>
+          <h4>My Role &amp; Approach</h4>
+          <p>I investigated how information moved through the business, what each person recorded and which reports were needed. Working closely with the accountant, I translated the accounting requirements into workbook architecture, calculations and reports. The accountant supplied accounting rules and domain expertise; I designed, developed and supported the technical solution, guided users and refined it based on feedback.</p>
+          <h4>The Solution</h4>
+          <p>An integrated Excel-based operational and financial management workbook, connecting structured transaction records, a chart of accounts, reusable calculations and reporting views. Users can move from account-level transaction detail to management-level summaries in the same system.</p>
+          <h4>Operational Value &amp; Outcomes</h4>
+          <p>The system supported the transition from paper administration to digital financial and operational workflows. It has remained in active use for more than six months, with continued support and improvements. Users reported that administrative work became faster and more manageable; no unverified percentage improvement is claimed.</p>
+        </div>
+        <div>
+          <h4>Technical Features</h4>
+          <ul>
+            <li>Transaction records and chart of accounts</li>
+            <li>General ledger with selected account movements, debit/credit detail and balances</li>
+            <li>Receivables and payables: summaries and responsible-person details</li>
+            <li>Trial balance, income statement and balance-sheet views</li>
+            <li>Local-currency and US-dollar reporting, exchange-rate calculations and variance tracking</li>
+            <li>Defined categories, input controls, report filters and user instructions</li>
+            <li>Business-specific operational records</li>
+          </ul>
+          <div class="panel"><h4>How users work with it</h4><p>Users record and classify transactions, select an account or responsible person, and access relevant detailed movements or financial summaries for review.</p></div>
+        </div>
+      </div>
+      <h3 class="gallery-title">Project Gallery</h3>
+      <div class="gallery">
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/dairy/overview.webp" data-alt="Anonymised account structure and transaction-entry interface"><span class="media-placeholder"><strong>Structure / inputs</strong>dairy/overview.webp</span></div><figcaption>Structured financial records and account classification.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/dairy/workflow-01.webp" data-alt="General ledger account selection and transaction detail"><span class="media-placeholder"><strong>General ledger</strong>dairy/workflow-01.webp</span></div><figcaption>Select an account to review movements and balances.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/dairy/workflow-02.webp" data-alt="Accounts receivable or payable summary and detail"><span class="media-placeholder"><strong>Receivables / payables</strong>dairy/workflow-02.webp</span></div><figcaption>Summary and transaction-level views of outstanding balances.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/dairy/report.webp" data-alt="Financial report generated by the operational workbook"><span class="media-placeholder"><strong>Financial reporting</strong>dairy/report.webp</span></div><figcaption>Financial reports based on structured transaction records.</figcaption></figure>
+      </div>
+      <div class="demo" data-video="assets/projects/dairy/demo.mp4"><h3 class="gallery-title">System Demonstration</h3><div class="video-note">Optional short screen recording: selecting an account and reviewing the linked report. The player appears when demo.mp4 is uploaded.</div></div>
+      <p class="confidentiality">Confidentiality: Public examples use anonymised or synthetic names, transaction records and financial amounts to protect client information. The underlying project and described functionality are real.</p>
     </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="eyebrow">
-          Business Systems · Process Automation · Reporting
+  </details>
+  <!-- ===================== PROJECT 02 CONTENT: CONSTRUCTION ===================== -->
+  <details class="project" id="project-construction">
+    <summary><span class="project-head">
+      <span><span class="project-num">PROJECT 02</span><span class="project-title">Construction Project Financial Control</span><span class="project-subtitle">Project budgets, actual costs, invoicing, cash collections and profitability reporting in one workbook.</span></span>
+      <span class="media-slot cover" data-image="assets/projects/construction/preview.webp" data-alt="Anonymised Excel project cost-control dashboard"><span class="media-placeholder"><strong>Excel system preview</strong>Upload construction/preview.webp</span></span>
+      <span class="chevron" aria-hidden="true">⌄</span>
+    </span></summary>
+    <div class="project-body">
+      <p class="project-teaser"><strong>Project overview.</strong> A project-centred Excel solution bringing financial inputs and management summaries together without repeated manual calculations across separate sections.</p>
+      <div class="case-grid">
+        <div>
+          <h4>The Business Challenge</h4><p>Construction projects involve moving financial elements: contract values, planned spending, actual costs, invoices, collections and approved changes. Disconnected records make budget performance, billing position and profitability difficult to track consistently.</p>
+          <h4>My Role &amp; Approach</h4><p>I designed and developed a customised workbook organised around project setup, monitoring and reporting. I separated data-entry areas from calculated summaries and provided user instructions identifying the sections requiring manual input.</p>
+          <h4>The Solution</h4><p>The system links project setup, expense transactions, invoicing and approved contract changes within one financial-control workbook. Its summaries calculate estimated versus actual spending, billing progress, cash collected versus outstanding amounts, and project profitability.</p>
+          <h4>Operational Value &amp; Outcomes</h4><p>The deliverable is a completed custom project financial-control workbook connecting financial records and reporting functions. Final client adoption has not been established, so this case study describes developed functionality rather than claiming confirmed savings or implementation results.</p>
         </div>
-        <h1>Turning complex business operations into practical, structured systems.</h1>
-        <p>
-          I develop customised Excel-based business solutions that
-          organise operational information, simplify administrative
-          processes, automate repetitive work and improve access
-          to financial and management reporting.
-        </p>
-        <div class="actions">
-          <a class="button" href="#projects">Explore Projects</a>
-          <a class="button button-outline" href="#contact">Contact Me</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="container">
-        <div class="section-label">What I Do</div>
-        <h2>Business-focused systems and automation</h2>
-        <p class="intro">
-          I work with existing business processes, fragmented records
-          and administrative workflows to develop structured,
-          usable solutions adapted to operational requirements.
-        </p>
-        <div class="capabilities">
-          <article class="capability">
-            <h3>Business Systems</h3>
-            <p>
-              Customised tools for organising sales, inventory,
-              expenses, collections and financial information.
-            </p>
-          </article>
-          <article class="capability">
-            <h3>Excel Automation</h3>
-            <p>
-              Advanced spreadsheet formulas, interconnected
-              calculations and streamlined reporting workflows.
-            </p>
-          </article>
-          <article class="capability">
-            <h3>Operational Reporting</h3>
-            <p>
-              Structured management information for monitoring
-              financial and operational activity.
-            </p>
-          </article>
+        <div>
+          <h4>Technical Features</h4>
+          <ul><li>Project and contract configuration</li><li>Budget allocation by cost category</li><li>Expense and payment transaction ledger</li><li>Budget-versus-actual amounts and variance percentages</li><li>Invoice register and billing progress</li><li>Approved change-order register</li><li>Contract, cash-position and profitability summaries</li><li>Designated input areas and automatically updated outputs</li></ul>
+          <div class="panel"><h4>How users work with it</h4><p>Users set up a project and enter expenses, invoices and approved changes in designated tables. Related project summaries then reflect those records.</p></div>
         </div>
       </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-label">Selected Work</div>
-        <h2>Real business systems and projects</h2>
-        <p class="intro">
-          The following projects demonstrate practical experience
-          developing customised tools for real business operations.
-          Detailed anonymised demonstrations will be added as
-          project material is prepared for publication.
-        </p>
-
-        <div class="projects">
-          <article class="project">
-            <div class="project-number">PROJECT 01</div>
-            <h3>Cattle & Dairy Business Digitalisation</h3>
-            <p>
-              Development of an integrated Excel-based operational
-              and accounting management system supporting the
-              transition from paper-based administration to
-              structured digital records.
-            </p>
-            <ul>
-              <li>Financial transaction records and chart of accounts</li>
-              <li>General ledger and financial balances</li>
-              <li>Accounts receivable and payable</li>
-              <li>Currency-related calculations and reporting</li>
-              <li>Business-specific operational information</li>
-            </ul>
-            <details>
-              <summary>Responsibilities and implementation</summary>
-              <p>
-                Developed in collaboration with the accountant
-                responsible for defining accounting requirements.
-                The system has been used in ongoing operations
-                for more than six months, with continued technical
-                support and improvements.
-              </p>
-            </details>
-          </article>
-
-          <article class="project">
-            <div class="project-number">PROJECT 02</div>
-            <h3>Construction Project Financial Control</h3>
-            <p>
-              A structured Excel-based workbook developed for
-              monitoring construction project finances, cost
-              movements and profitability.
-            </p>
-            <ul>
-              <li>Project configuration and contract tracking</li>
-              <li>Estimated versus actual expenses</li>
-              <li>Invoicing and payments</li>
-              <li>Cash position and collections</li>
-              <li>Approved change orders</li>
-              <li>Financial and profitability summaries</li>
-            </ul>
-            <details>
-              <summary>Solution scope</summary>
-              <p>
-                The workbook brings related financial information
-                into a structured project-control environment.
-                Demonstrated functionality is distinguished
-                from any implementation outcomes not yet verified.
-              </p>
-            </details>
-          </article>
-
-          <article class="project">
-            <div class="project-number">PROJECT 03</div>
-            <h3>Poultry Sales & Distribution Reporting</h3>
-            <p>
-              Excel-based reporting and operational tools
-              supporting production and distribution activities
-              across regional sales operations.
-            </p>
-            <ul>
-              <li>Sales reporting across four regional areas</li>
-              <li>Inventory movements and balances</li>
-              <li>Collections and outstanding receivables</li>
-              <li>Operational expenses</li>
-              <li>Consolidated management information</li>
-            </ul>
-            <details>
-              <summary>Responsibilities and approach</summary>
-              <p>
-                Developed and standardised reporting structures
-                across regional activities, supported operational
-                users and prepared consolidated information
-                for business management.
-              </p>
-            </details>
-          </article>
-        </div>
+      <h3 class="gallery-title">Project Gallery</h3>
+      <div class="gallery">
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/construction/overview.webp" data-alt="Construction project configuration and financial summary"><span class="media-placeholder"><strong>Project dashboard</strong>construction/overview.webp</span></div><figcaption>Project configuration and consolidated financial position.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/construction/workflow-01.webp" data-alt="Construction project expense transaction ledger"><span class="media-placeholder"><strong>Expense ledger</strong>construction/workflow-01.webp</span></div><figcaption>Expense entries organised by category and payee.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/construction/workflow-02.webp" data-alt="Budget versus actual cost control report"><span class="media-placeholder"><strong>Budget control</strong>construction/workflow-02.webp</span></div><figcaption>Estimated versus actual costs and budget variances.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/construction/report.webp" data-alt="Construction billing and profitability summary"><span class="media-placeholder"><strong>Billing / profitability</strong>construction/report.webp</span></div><figcaption>Invoicing, change orders, collections or profitability reporting.</figcaption></figure>
       </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-label">About & Expertise</div>
-        <h2>Building systems around how businesses actually work</h2>
-        <div class="about-text">
-          <p>
-            I design and develop business systems that help
-            organisations organise information, simplify
-            administrative workflows, reduce repetitive manual
-            work and improve access to operational and financial
-            reporting.
-          </p>
-          <p>
-            My experience includes developing Excel-based solutions
-            for agricultural production, sales distribution,
-            inventory control, accounting workflows, accounts
-            receivable and payable, financial reporting and
-            project cost management.
-          </p>
-          <p>
-            I work directly with business owners, accountants,
-            managers and operational users to understand existing
-            processes, identify requirements and translate them
-            into functional tools adapted to how people actually work.
-          </p>
-          <p>
-            My approach combines business process analysis,
-            structured data management, spreadsheet automation,
-            reporting development, user training and ongoing
-            technical support.
-          </p>
-        </div>
-        <h3>Professional and Technical Competencies</h3>
-        <div class="expertise-list">
-          <span>Business Process Analysis</span>
-          <span>Excel-Based Business Systems</span>
-          <span>Advanced Excel Formulas</span>
-          <span>Spreadsheet Automation</span>
-          <span>Operational Reporting</span>
-          <span>Financial Reporting</span>
-          <span>Data Organisation</span>
-          <span>Requirements Gathering</span>
-          <span>User Training</span>
-        </div>
-        <p>
-          Additional experience and training includes SQL,
-          Power BI, Google Sheets and Apps Script.
-        </p>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="section-label">Contact & CV</div>
-        <h2>Let's discuss your business systems needs</h2>
-        <p>
-          Available for enquiries about customised operational
-          systems, spreadsheet automation, reporting solutions,
-          professional collaborations and relevant employment
-          opportunities.
-        </p>
-        <p class="contact-note">
-          Professional contact information, GitHub profile,
-          LinkedIn and downloadable CV will be added here
-          once the final details are confirmed.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      Fatima Seba | Business Systems & Process Automation
+      <div class="demo" data-video="assets/projects/construction/demo.mp4"><h3 class="gallery-title">System Demonstration</h3><div class="video-note">Optional short screen recording: entering an expense and showing the budget summary update. The player appears when demo.mp4 is uploaded.</div></div>
+      <p class="confidentiality">Confidentiality: Public examples use anonymised or synthetic names, transaction records and financial amounts to protect client information. The underlying project and described functionality are real.</p>
     </div>
-  </footer>
+  </details>
+  <!-- ===================== PROJECT 03 CONTENT: POULTRY ===================== -->
+  <details class="project" id="project-poultry">
+    <summary><span class="project-head">
+      <span><span class="project-num">PROJECT 03</span><span class="project-title">Poultry Sales &amp; Distribution Reporting</span><span class="project-subtitle">Standardised Excel reporting for regional sales, inventory movements, collections and management information.</span></span>
+      <span class="media-slot cover" data-image="assets/projects/poultry/preview.webp" data-alt="Anonymised Excel regional sales and inventory report"><span class="media-placeholder"><strong>Excel system preview</strong>Upload poultry/preview.webp</span></span>
+      <span class="chevron" aria-hidden="true">⌄</span>
+    </span></summary>
+    <div class="project-body">
+      <p class="project-teaser"><strong>Project overview.</strong> Structured operational reporting across four regional sales areas, linking sales activity, product movements and outstanding balances.</p>
+      <div class="case-grid">
+        <div>
+          <h4>The Business Challenge</h4><p>The poultry production and egg distribution company operated across four regional sales areas. Different recording formats made consolidation difficult for management and accounting. Sales, inventory, collections, returns and expenses needed consistent reporting despite unreliable connectivity and file-conflict issues.</p>
+          <h4>My Role &amp; Approach</h4><p>I built the regional sales workbooks from the ground up, consulted managers about requirements and how staff would use the files, standardised inputs and calculations, and prepared instructions. I supported adoption and troubleshooting, while regional managers trained their teams. I continued adapting the files as workflows changed.</p>
+          <h4>The Solution</h4><p>The Excel reporting process standardised regional records covering product quantities, inventory movement, pricing, sales, collections, pending balances, returns, losses, donations and expenses. Information was consolidated into central management and accounting views through a defined transfer process suited to connectivity limitations.</p>
+          <h4>Operational Value &amp; Outcomes</h4><p>The regional workbooks were adopted and continued in use. They established more consistent recording and consolidation for management reporting. This work was part of broader operational improvements, including other inventory, production and administrative reporting responsibilities.</p>
+        </div>
+        <div>
+          <h4>Technical Features</h4><ul><li>Regional records with dates, invoice references and customer or area information</li><li>Quantities, packaging/unit conversions, prices and sales amounts</li><li>Inventory received, distributed, sold and remaining</li><li>Returns, donations, losses and expenses</li><li>Collections and outstanding customer balances</li><li>Monthly sales, quantity, price and collection summaries</li><li>Standardised input fields, categories, filters and controls</li><li>Defined transfer and consolidation process across regions</li></ul>
+          <div class="panel"><h4>Related responsibilities</h4><p>Additional work in the company included warehouse and feed-inventory controls, production reporting, recurring accounting-spreadsheet tasks, HR workbook improvements, training and documentation. These are related experience, not features attributed to this sales workbook.</p></div>
+        </div>
+      </div>
+      <h3 class="gallery-title">Project Gallery</h3>
+      <div class="gallery">
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/poultry/overview.webp" data-alt="Regional poultry sales and distribution records"><span class="media-placeholder"><strong>Regional records</strong>poultry/overview.webp</span></div><figcaption>Sales, inventory movements and collections recorded by region.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/poultry/workflow-01.webp" data-alt="Monthly regional sales summary report"><span class="media-placeholder"><strong>Monthly summary</strong>poultry/workflow-01.webp</span></div><figcaption>Monthly volumes, pricing, sales and outstanding balances.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/poultry/workflow-02.webp" data-alt="Standardised categories and spreadsheet input controls"><span class="media-placeholder"><strong>Standardised inputs</strong>poultry/workflow-02.webp</span></div><figcaption>Shared categories, fields and controls for regional consistency.</figcaption></figure>
+        <figure class="media-card"><div class="media-slot gallery-slot" data-image="assets/projects/poultry/report.webp" data-alt="Consolidated poultry management reporting view"><span class="media-placeholder"><strong>Management view</strong>poultry/report.webp</span></div><figcaption>Consolidated reporting from regional records.</figcaption></figure>
+      </div>
+      <div class="demo" data-video="assets/projects/poultry/demo.mp4"><h3 class="gallery-title">System Demonstration</h3><div class="video-note">Optional short screen recording: regional records and the reporting output. The player appears when demo.mp4 is uploaded.</div></div>
+      <p class="confidentiality">Confidentiality: Public examples use anonymised or synthetic names, transaction records and financial amounts to protect client information. The underlying project and described functionality are real.</p>
+    </div>
+  </details>
+  </div>
+</div></section>
+<!-- ===================== ABOUT CONTENT ===================== -->
+<section id="about"><div class="container">
+  <div class="section-label">About &amp; Expertise</div><h2>Building systems around how businesses actually work</h2>
+  <div class="about-text">
+    <p>I design and develop business systems that help organisations organise information, simplify administrative workflows, reduce repetitive manual work and improve access to operational and financial reporting.</p>
+    <p>My experience includes developing Excel-based solutions for agricultural production, sales distribution, inventory control, accounting workflows, accounts receivable and payable, financial reporting and project cost management.</p>
+    <p>I work directly with business owners, accountants, managers and operational users to understand existing processes, identify requirements and translate them into functional tools adapted to how people actually work.</p>
+    <p>My approach combines business process analysis, structured data management, spreadsheet automation, reporting development, user training and ongoing technical support.</p>
+  </div>
+  <h3>Professional &amp; Technical Competencies</h3>
+  <div class="expertise-list"><span>Business Process Analysis</span><span>Excel-Based Business Systems</span><span>Advanced Excel Formulas</span><span>Spreadsheet Automation</span><span>Operational Reporting</span><span>Financial Reporting</span><span>Data Structuring</span><span>Requirements Gathering</span><span>User Training</span></div>
+  <p>Additional experience or training: SQL, Power BI, Google Sheets and Apps Script.</p>
+</div></section>
+<!-- ===================== CONTACT CONTENT: EDIT EMAIL/NUMBER HERE ===================== -->
+<section class="contact" id="contact"><div class="container">
+  <div class="section-label">Let's Connect</div>
+  <h2>Have a business challenge or professional opportunity in mind?</h2>
+  <p>I'm available for customised business systems, process automation, reporting solutions, and professional opportunities in business operations and systems improvement.</p>
+  <div class="contact-actions">
+    <!-- EMAIL: change both href and visible address if your email changes -->
+    <a class="btn btn-dark" href="mailto:fatimaseba.career@gmail.com">✉ Email Me · fatimaseba.career@gmail.com</a>
+    <!-- WHATSAPP: wa.me requires country code 39 and NO spaces / plus sign -->
+    <a class="btn btn-light" href="https://wa.me/393314477247" target="_blank" rel="noopener noreferrer">WhatsApp · +39 331 4477247</a>
+    <!-- CV BUTTON: upload documents/Fatima_Seba_CV.pdf to activate automatically -->
+    <span class="btn btn-disabled" id="cv-wait">Download CV · Available soon</span>
+    <a class="btn btn-light" id="cv-link" href="documents/Fatima_Seba_CV.pdf" download hidden>Download CV (PDF)</a>
+  </div>
+  <p class="contact-small">For privacy, project demonstrations contain anonymised or synthetic business records.</p>
+</div></section>
+</main>
+<footer><div class="container">Fatima Seba | Business Systems &amp; Process Automation</div></footer>
+<script>
+/* ===== MEDIA PATHS ARE IN HTML data-image AND data-video ATTRIBUTES. =====
+   Upload exactly named .webp or .mp4 files to GitHub; the placeholders switch automatically.
+   No external library or code editor is required. */
+(function () {
+  // Open one case study at a time. Native <details> remains keyboard accessible.
+  const projects = document.querySelectorAll('details.project');
+  projects.forEach(project => project.addEventListener('toggle', () => {
+    if (project.open) projects.forEach(other => { if (other !== project) other.open = false; });
+  }));
+
+  // Add a real image only when it exists. Otherwise keep a neutral placeholder.
+  document.querySelectorAll('[data-image]').forEach(slot => {
+    const path = slot.dataset.image;
+    const img = new Image();
+    img.alt = slot.dataset.alt || 'Project screenshot';
+    img.loading = 'lazy';
+    img.onload = () => {
+      slot.classList.add('loaded');
+      slot.replaceChildren();
+      if (slot.classList.contains('cover')) {
+        // A summary cannot contain an interactive image link; keep cover non-clickable.
+        slot.appendChild(img);
+      } else {
+        const link = document.createElement('a');
+        link.href = path;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.setAttribute('aria-label', 'Open full-size image: ' + img.alt);
+        link.appendChild(img);
+        slot.appendChild(link);
+      }
+    };
+    img.onerror = () => {}; // Placeholder remains visible.
+    img.src = path;
+  });
+
+  // Show the player only if a video has been uploaded.
+  document.querySelectorAll('[data-video]').forEach(container => {
+    const path = container.dataset.video;
+    fetch(path, {method:'HEAD'}).then(response => {
+      if (!response.ok) return;
+      const video = document.createElement('video');
+      video.preload = 'none';
+      video.controls = true;
+      video.className = 'video-player';
+      video.src = path;
+      container.querySelector('.video-note').hidden = true;
+      container.appendChild(video);
+    }).catch(() => {});
+  });
+
+  // Only enable the CV download button once the actual PDF has been uploaded.
+  fetch('documents/Fatima_Seba_CV.pdf', {method:'HEAD'})
+    .then(response => {
+      if (response.ok && (response.headers.get('content-type') || '').toLowerCase().includes('pdf')) {
+        document.getElementById('cv-link').hidden = false;
+        document.getElementById('cv-wait').hidden = true;
+      }
+    }).catch(() => {});
+})();
+</script>
 </body>
 </html>
