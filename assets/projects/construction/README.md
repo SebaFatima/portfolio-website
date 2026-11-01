@@ -1,0 +1,1 @@
+Anonymised construction project screenshots
