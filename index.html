@@ -231,7 +231,6 @@
     const path = slot.dataset.image;
     const img = new Image();
     img.alt = slot.dataset.alt || 'Project screenshot';
-    img.loading = 'lazy';
     img.onload = () => {
       slot.classList.add('loaded');
       slot.replaceChildren();
