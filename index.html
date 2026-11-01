@@ -5,6 +5,55 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Fatima Seba develops practical Excel-based business systems, process automation and financial and operational reporting solutions.">
   <title>Fatima Seba | Business Systems & Process Automation</title>
+  
+/* ===== FULL-WIDTH PROJECT GALLERIES ===== */
+
+/* Show one screenshot per row instead of two columns */
+.project-body .gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+/* Make every gallery item use all available space */
+.project-body .gallery .media-card {
+  width: 100%;
+  min-width: 0;
+  grid-column: 1 / -1;
+}
+
+/* Give each screenshot a large, natural-size display */
+.project-body .gallery .gallery-slot {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  aspect-ratio: auto;
+}
+
+/* Display complete Excel screenshots without cropping */
+.project-body .gallery .gallery-slot img,
+.project-body .gallery .media-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Keep the full image width inside its container */
+.project-body .gallery .media-slot a {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Keep captions readable beneath each screenshot */
+.project-body .gallery figcaption {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
   <style>
     /* ===== DESIGN SETTINGS: COLOURS, FONTS AND SPACING ===== */
     :root { --navy:#14243a; --teal:#117c78; --text:#27384b; --muted:#596b7d; --bg:#f6f8fa; --line:#dce5ea; --white:#fff; }
