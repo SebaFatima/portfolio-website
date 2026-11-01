@@ -79,6 +79,41 @@
   line-height: 1.6;
 }
  
+/* ===== LARGER CLOSED PROJECT PREVIEWS ===== */
+
+@media (min-width: 781px) {
+
+  /* Give the preview more horizontal space */
+  .project-head {
+    grid-template-columns: minmax(0, 1fr) 430px 20px;
+    gap: 20px;
+  }
+
+  /* Increase the preview image dimensions */
+  .project-head .media-slot.cover {
+    width: 100%;
+    height: 180px;
+    min-height: 180px;
+  }
+
+  /* Show the entire Excel screenshot without cropping */
+  .project-head .media-slot.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+/* Keep the preview comfortable on mobile */
+@media (max-width: 780px) {
+  .project-head .media-slot.cover {
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
+  }
+}
+
   </style>
 </head>
 <body>
